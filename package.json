@@ -12,7 +12,7 @@
     "kotlin",
     "android"
   ],
-  "author": "Enoch",
+  "author": "Raiidr",
   "license": "MIT",
   "files": [
     "plugin",
@@ -23,7 +23,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@expo/config-plugins": "^7.3.0"
+    "@expo/config-plugins": "^7.3.0",
+    "fs-extra": "^11.1.1"
   },
   "peerDependencies": {
     "expo": ">=50.0.0"
