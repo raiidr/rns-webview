@@ -42,6 +42,12 @@ android {
             res.srcDirs = ['src/main/res']
         }
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 repositories {
