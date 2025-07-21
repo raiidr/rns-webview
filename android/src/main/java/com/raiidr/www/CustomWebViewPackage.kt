@@ -7,6 +7,12 @@ import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
 
+import com.facebook.react.uimanager.SimpleViewManager
+import com.facebook.react.uimanager.ThemedReactContext
+import com.facebook.react.bridge.ReactPackage
+
+
+
 class CustomWebViewPackage : ReactPackage {
     override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
         return emptyList()
