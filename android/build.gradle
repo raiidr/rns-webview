@@ -33,7 +33,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 
     sourceSets {
@@ -43,9 +43,7 @@ android {
         }
     }
 }
-kotlinOptions {
-  jvmTarget = "17"
-}
+
 repositories {
     google()
     mavenCentral()
