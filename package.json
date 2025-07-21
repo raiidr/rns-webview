@@ -1,6 +1,6 @@
 {
   "name": "rns-webview",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A configurable React Native WebView plugin for Expo Dev Client, featuring Kotlin-based dialog suppression.",
   "main": "plugin/index.js",
   "keywords": [
