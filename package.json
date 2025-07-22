@@ -1,8 +1,9 @@
 {
   "name": "rns-webview",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A React Native WebView plugin for Expo Dev Client",
   "main": "src/index.js",
+  "type": "module",
   "expo": {
     "plugin": "./plugin/index.js"
   },
@@ -12,10 +13,9 @@
     }
   },
   "files": [
-    "android",
-    "plugin",
-    "src",
-    "react-native.config.js",
+    "./android",
+    "./plugin",
+    "./src",
     "README.md"
   ],
   "peerDependencies": {
