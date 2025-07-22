@@ -1,109 +1,124 @@
-## 📖 `README.md`
-
-````md
 # rns-webview
 
-Kotlin-powered WebView customization for React Native via Expo Dev Client. Suppresses native `alert`, `confirm`, and `prompt` dialogs inside your Android WebView — with zero manual native setup.
+**Kotlin-powered WebView for React Native + Expo Dev Client**  
+Suppresses native `alert`, `confirm`, and `prompt` dialogs in Android WebViews — no manual native setup needed.
 
 ---
 
 ## ✨ Features
 
-- 🧠 **Dialog suppression** via custom `WebChromeClient`
-- ⚙️ **Configurable** with `suppressDialog: true/false`
-- 📦 Built for **Expo Dev Client & EAS Build**
-- 🔌 Easy integration using Expo's config plugin system
-- 🚫 No need to edit native Android project manually
+- 🧠 Suppresses intrusive `alert`, `confirm`, and `prompt` dialogs
+- ⚙️ Configurable via props from JavaScript
+- 🚀 Built for **Expo Dev Client** + **EAS Build**
+- 🔌 Integrated via Expo config plugin (no Android edits)
+- 🛠 Enables smooth keyboard + navigation handling on Android
 
 ---
 
 ## 🚀 Getting Started
 
-### 1. Install the package
+### 1️⃣ Install the package
 
 ```bash
 npm install rns-webview
 ```
-````
 
-### 2. Add to your Expo config
+---
 
-Modify `app.json` or `app.config.js`:
+### 2️⃣ Configure the Expo plugin
+
+Update your `app.json` or `app.config.js`:
 
 ```js
 // app.config.js
 module.exports = {
   expo: {
-    name: "MyApp",
-    plugins: [["rns-webview", { suppressDialog: true }]],
+    plugins: ["rns-webview/plugin"],
   },
 };
 ```
 
-> ✅ `suppressDialog` defaults to `true` if omitted.
+Or if using `app.json`:
 
-### 3. Build your dev client
+```json
+{
+  "expo": {
+    "plugins": ["rns-webview/plugin"]
+  }
+}
+```
+
+> 💡 You don’t need extra options unless you want to customize behavior — `suppressDialog` defaults to `true`.
+
+---
+
+### 3️⃣ Build with EAS
 
 ```bash
 eas build --profile development --platform android
 ```
 
-Test your dialog suppression right inside the Dev Client!
+> ✅ No need to run `expo prebuild` manually — EAS does this for you.
 
 ---
 
-## 🧰 Plugin Behavior
+## 📱 Usage in React Native
 
-This plugin runs during the Expo prebuild phase and will:
+```tsx
+import RaiidrWebView from "rns-webview";
 
-- Copy Kotlin files from `/android/` into the native project.
-- Register a custom `WebChromeClient` to suppress dialogs.
-- Optional: extend behavior with more props (coming soon).
-
-No changes needed to `android/` directly.
-
----
-
-## 🔍 Example Use Case
-
-If your site triggers `alert("Hello World")`, this will suppress it silently, preserving native UX and avoiding intrusive dialogs in your app.
-
----
-
-## 🔒 Permissions & Compatibility
-
-- ✅ Android only (iOS support planned)
-- ✅ Works with Expo SDK 50+
-- ❌ Doesn’t support Expo Go (requires Dev Client)
-
----
-
-## 🛠 Advanced Configuration
-
-You can pass additional options (coming soon):
-
-```js
-plugins: [["rns-webview", { suppressDialog: true }]];
+export default function App() {
+  return (
+    <RaiidrWebView
+      source={{ uri: "https://raiidr.com" }}
+      onNavigationStateChange={({ url }) => {
+        console.log("Navigated to:", url);
+      }}
+      suppressNavigationEvents={true}
+      descendantFocusability="afterDescendants"
+      style={{ flex: 1 }}
+    />
+  );
+}
 ```
 
-Want `prompt` suppression but allow `alert`? Stay tuned 👀
+---
+
+## 🔧 Supported Props
+
+| Prop                       | Type                                                              | Description                            |
+| -------------------------- | ----------------------------------------------------------------- | -------------------------------------- |
+| `source`                   | `{ uri: string }`                                                 | Loads content into the WebView         |
+| `onNavigationStateChange`  | `function`                                                        | Fires when navigation occurs           |
+| `suppressNavigationEvents` | `boolean`                                                         | Prevents dispatching navigation events |
+| `descendantFocusability`   | `"blockDescendants" \| "beforeDescendants" \| "afterDescendants"` | Controls keyboard focus behavior       |
+
+---
+
+## 🔍 How the Plugin Works
+
+- Injects Kotlin files during native project generation
+- Registers a custom `WebChromeClient` for dialog suppression
+- Hooks into native build via Expo's plugin system
+- No manual changes required inside `/android`
+
+---
+
+## 🛡 Compatibility
+
+- ✅ Android only (iOS support planned)
+- ✅ Works with Expo SDK 50+ / React Native 0.73+
+- ❌ Not compatible with Expo Go (requires Dev Client)
 
 ---
 
 ## 💬 Feedback & Contributions
 
-This plugin is maintained by [@yourusername](https://github.com/raiidr). PRs welcome!
-
-Open issues or feature requests in the [GitHub repo](https://github.com/raiidr/rns-webview/issues).
+Maintained by [@raiidr](https://github.com/raiidr)  
+PRs welcome! Create issues or feature requests [here](https://github.com/raiidr/rns-webview/issues)
 
 ---
 
 ## 📄 License
 
 MIT © Raiidr
-
-```
-
----
-
-```
