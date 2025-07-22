@@ -1,4 +1,0 @@
-<!-- android/app/src/main/res/values/ids.xml -->
-<resources>
-    <item name="suppress_nav_events" type="id" />
-</resources>

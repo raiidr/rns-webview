@@ -118,7 +118,7 @@ class CustomWebViewManager : SimpleViewManager<WebView>() {
 
     @ReactProp(name = "suppressNavigationEvents")
     fun setSuppressNavigationEvents(webView: WebView, suppress: Boolean) {
-        webView.setTag("suppress_nav_events", suppress)
+          webView.setTag(suppress) // ✅ correct if you don’t use the key
        // webView.setTag(R.id.suppress_nav_events, suppress)
     }
 
