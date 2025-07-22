@@ -1,3 +1,3 @@
-// plugin/index.js 
+// plugin/index.js
 const withRNSWebView = require('./withRNSWebView');
 module.exports = withRNSWebView;

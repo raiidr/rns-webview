@@ -3,22 +3,13 @@
   "version": "1.2.6",
   "description": "A React Native WebView plugin for Expo Dev Client",
   "main": "src/index.cjs",
-  "exports": {
-    "require": "./src/index.cjs",
-    "import": "./src/component.mjs"
-  },
   "expo": {
     "plugin": "./plugin/index.js"
   },
-  "react-native": {
-    "android": {
-      "sourceDir": "./android"
-    }
-  },
   "files": [
-    "./android",
-    "./plugin",
-    "./src",
+    "android",
+    "plugin",
+    "src",
     "README.md"
   ],
   "peerDependencies": {
