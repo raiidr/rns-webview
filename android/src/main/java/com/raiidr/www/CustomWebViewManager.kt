@@ -20,7 +20,6 @@ import com.facebook.react.uimanager.annotations.ReactProp
 import com.facebook.react.uimanager.events.RCTEventEmitter
 
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.uimanager.ViewManager
 
