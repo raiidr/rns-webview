@@ -1,4 +1,4 @@
-// CustomWebViewPackage.kt
+// CustomWebViewPackage.kt 
 
 package com.raiidr.www
 
@@ -9,8 +9,6 @@ import com.facebook.react.uimanager.ViewManager
 
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
-import com.facebook.react.bridge.ReactPackage
-
 
 
 class CustomWebViewPackage : ReactPackage {

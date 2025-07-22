@@ -1,4 +1,4 @@
-// CustomWebViewManager.kt
+// CustomWebViewManager.kt 
 package com.raiidr.www
 
 import android.content.Context
@@ -118,7 +118,8 @@ class CustomWebViewManager : SimpleViewManager<WebView>() {
 
     @ReactProp(name = "suppressNavigationEvents")
     fun setSuppressNavigationEvents(webView: WebView, suppress: Boolean) {
-        webView.setTag(R.id.suppress_nav_events, suppress)
+        webView.setTag("suppress_nav_events", suppress)
+       // webView.setTag(R.id.suppress_nav_events, suppress)
     }
 
     // Prop to control descendant focus
