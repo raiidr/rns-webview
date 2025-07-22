@@ -1,9 +1,9 @@
-// withRNSWebView.js 
-import { withPlugins } from '@expo/config-plugins';
-import withAndroidWebView from './withAndroidWebView.js';
+// plugin/withRNSWebView.js 
+const { withPlugins } = require('@expo/config-plugins');
+const withAndroidWebView = require('./withAndroidWebView');
 
-export default function (config, props) {
+module.exports = function (config, props) {
     return withPlugins(config, [
         [withAndroidWebView, props],
     ]);
-}
+};
