@@ -1,55 +1,29 @@
 {
   "name": "rns-webview",
-  "version": "1.1.9",
-  "description": "A configurable React Native WebView plugin for Expo Dev Client, featuring Kotlin-based dialog suppression.",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "1.2.0",
+  "description": "A React Native WebView plugin for Expo Dev Client",
+  "expo": {
+    "plugin": "./plugin/index.js"
   },
-  "keywords": [
-    "react-native",
-    "expo",
-    "webview",
-    "config-plugin",
-    "expo-dev-client",
-    "kotlin",
-    "android"
-  ],
-  "author": "Raiidr",
-  "license": "MIT",
-  "react-native": "plugin/index.js",
-  "plugin": "./plugin/index.js",
+  "react-native": {
+    "android": {
+      "sourceDir": "./android"
+    }
+  },
   "files": [
-    "README.md",
-    "android/",
-    "src/",
-    "plugin/",
-    "react-native.config.js"
+    "android",
+    "plugin",
+    "src",
+    "react-native.config.js",
+    "README.md"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@expo/config-plugins": "^7.3.0",
-    "fs-extra": "^11.1.1"
-  },
   "peerDependencies": {
     "expo": ">=49.0.0",
     "react": "*",
     "react-native": "*"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/raiidr/rns-webview.git"
-  },
-  "homepage": "https://github.com/raiidr/rns-webview#readme",
-  "bugs": {
-    "url": "https://github.com/raiidr/rns-webview/issues"
-  },
-  "expo": {
-    "android": {
-      "dangerouslyAllowBackup": true
-    }
+  "dependencies": {
+    "@expo/config-plugins": "^7.3.0",
+    "fs-extra": "^11.1.1"
   }
 }
