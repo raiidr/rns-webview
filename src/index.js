@@ -1,4 +1,4 @@
-// index.js
-import { requireNativeComponent } from 'react-native';
-
-export const RaiidrWebView = requireNativeComponent('MyRaiidrWebView');
+const { requireNativeComponent } = require('react-native');
+module.exports = {
+    RaiidrWebView: requireNativeComponent('MyRaiidrWebView'),
+};
