@@ -16,18 +16,19 @@ module.exports = function withAndroidWebView(config, props = {}) {
             'com',
             'rnswebview'
         );
-        try {
-            await fs.ensureDir(targetDir);
 
-            // Check if source directory exists
-            if (await fs.pathExists(sourceDir)) {
+        try {
+            const shouldInject = !(await fs.pathExists(path.join(targetDir, 'CustomWebViewManager.kt')));
+
+            if (shouldInject && await fs.pathExists(sourceDir)) {
+                await fs.ensureDir(targetDir);
                 await fs.copy(sourceDir, targetDir);
-                console.log('✅ RNS WebView Android files copied successfully');
+                console.log('✅ RNS WebView native files injected');
             } else {
-                console.warn('⚠️ Android source directory not found:', sourceDir);
+                console.warn('⚠️ Native files already present or source directory missing — skipping injection.');
             }
         } catch (error) {
-            console.error('❌ Error copying Android files:', error);
+            console.error('❌ Error during native injection:', error);
             throw error;
         }
 
