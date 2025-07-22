@@ -1,7 +1,8 @@
 {
   "name": "rns-webview",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A React Native WebView plugin for Expo Dev Client",
+  "main": "src/index.js",
   "expo": {
     "plugin": "./plugin/index.js"
   },

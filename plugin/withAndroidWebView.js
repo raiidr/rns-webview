@@ -16,7 +16,6 @@ module.exports = function withAndroidWebView(config, props = {}) {
             'com',
             'rnswebview'
         );
-
         try {
             await fs.ensureDir(targetDir);
 
