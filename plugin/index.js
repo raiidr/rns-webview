@@ -1,6 +1,6 @@
 // plugin/index.js 
-const withRNSWebView = require('./withRNSWebView');
+import withRNSWebView from './withRNSWebView.js';
 
-module.exports = function (config, props = {}) {
+export default function (config, props = {}) {
     return withRNSWebView(config, props);
-};
+}

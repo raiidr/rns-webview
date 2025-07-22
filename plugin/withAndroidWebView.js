@@ -1,11 +1,11 @@
 // plugin/withAndroidWebView.js
-const { withDangerousMod } = require('@expo/config-plugins');
-const path = require('path');
-const fs = require('fs-extra');
+import { withDangerousMod } from '@expo/config-plugins';
+import path from 'path';
+import fs from 'fs-extra';
 
-module.exports = function withAndroidWebView(config, props = {}) {
+export default function withAndroidWebView(config, props = {}) {
     return withDangerousMod(config, ['android', async (config) => {
-        const sourceDir = path.join(__dirname, '..', 'android', 'src');
+        const sourceDir = path.join(process.cwd(), 'node_modules', 'rns-webview', 'android', 'src');
         const targetDir = path.join(
             config.modRequest.projectRoot,
             'android',
@@ -14,12 +14,12 @@ module.exports = function withAndroidWebView(config, props = {}) {
             'main',
             'java',
             'com',
-            'rnswebview'
+            'raiidr',
+            'www'
         );
+
         try {
             await fs.ensureDir(targetDir);
-
-            // Check if source directory exists
             if (await fs.pathExists(sourceDir)) {
                 await fs.copy(sourceDir, targetDir);
                 console.log('✅ RNS WebView Android files copied successfully');
@@ -33,4 +33,4 @@ module.exports = function withAndroidWebView(config, props = {}) {
 
         return config;
     }]);
-};
+}
