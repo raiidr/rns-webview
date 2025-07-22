@@ -1,14 +1,16 @@
 {
   "name": "rns-webview",
-  "version": "1.3.2",
-  "description": "A React Native WebView plugin for Expo Dev Client",
+  "version": "1.3.3",
+  "description": "Suppress JS Dialog webview for react native",
   "main": "src/index.js",
   "exports": {
     ".": {
-      "require": "./src/index.js"
+      "require": "./src/index.js",
+      "default": "./src/index.js"
     },
     "./plugin": {
-      "require": "./plugin/index.js"
+      "require": "./plugin/index.js",
+      "default": "./plugin/index.js"
     }
   },
   "expo": {

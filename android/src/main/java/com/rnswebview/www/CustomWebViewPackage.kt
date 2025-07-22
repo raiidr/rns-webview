@@ -1,6 +1,6 @@
-//android/src/main/java/com/raiidr/www/  CustomWebViewPackage.kt 
+//android/src/main/java/com/rnswebview/www/  CustomWebViewPackage.kt 
 
-package com.raiidr.www
+package com.rnswebview.www
 
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext

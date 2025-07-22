@@ -1,5 +1,5 @@
-//android/src/main/java/com/raiidr/www/ CustomWebViewManager.kt 
-package com.raiidr.www
+//android/src/main/java/com/rnswebview/www/ CustomWebViewManager.kt 
+package com.rnswebview.www
 
 import android.content.Context
 import android.graphics.Bitmap
