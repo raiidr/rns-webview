@@ -1,6 +1,6 @@
 {
   "name": "rns-webview",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Suppress JS Dialog webview for react native",
   "main": "src/index.js",
   "exports": {
